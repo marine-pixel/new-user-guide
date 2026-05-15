@@ -1,370 +1,264 @@
 <!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>내 첫 포스팅, 이대로만 쓰면 돼요</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>첫 포스팅 가이드</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     :root {
-      --bg: #eef9f8;
-      --card-bg: #ffffff;
-      --text-main: #1f2937;
-      --text-sub: #6b7280;
-      --line: #dff3f0;
-      --accent: #b9ebe5;
-      --accent-deep: #7fd8cb;
-      --shadow: 0 10px 30px rgba(127, 216, 203, 0.12);
+      --bg: #0c1624;
+      --bg-2: #111f31;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #f4f1eb;
+      --muted: rgba(244,241,235,0.72);
+      --soft: rgba(244,241,235,0.56);
+      --accent: #d8f03b;
+      --accent-2: #8fe3ff;
+      --button: #f4f1eb;
+      --button-text: #0c1624;
+      --shadow: 0 16px 40px rgba(0,0,0,0.28);
       --radius: 24px;
     }
+
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-        "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(143, 227, 255, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(216, 240, 59, 0.08), transparent 22%),
+        linear-gradient(180deg, #101b2b 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
     }
 
     body {
-      min-height: 100vh;
+      min-height: 100svh;
     }
 
     .wrap {
       width: 100%;
-      max-width: 430px;
+      max-width: 460px;
       margin: 0 auto;
-      padding: 22px 18px 28px;
+      min-height: 100svh;
+      padding: calc(env(safe-area-inset-top) + 18px) 18px calc(env(safe-area-inset-bottom) + 18px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .hero {
+      flex: 0 0 auto;
+      padding: 10px 2px 2px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: rgba(244,241,235,0.62);
+      letter-spacing: -0.02em;
       text-align: center;
-      margin-bottom: 18px;
     }
 
-    .title {
+    .hero h1 {
       margin: 0;
-      font-size: 31px;
-      line-height: 1.22;
+      font-size: clamp(28px, 8vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
       font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-main);
-    }
-
-    .subtitle {
-      margin: 14px auto 0;
-      max-width: 320px;
-      font-size: 16px;
-      line-height: 1.55;
-      font-weight: 600;
-      color: var(--text-sub);
       word-break: keep-all;
+      text-align: center;
     }
 
-    .card-list {
-      display: flex;
-      flex-direction: column;
+    .hero p {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      text-align: center;
+    }
+
+    .stack {
+      display: grid;
       gap: 12px;
+      flex: 1 1 auto;
+      min-height: 0;
+      align-content: start;
     }
 
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
+    details.card {
+      min-height: 126px;
+      padding: 18px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));
+      border: 1px solid var(--card-border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px 20px;
-      min-height: 110px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .card:active {
-      transform: scale(0.985);
-    }
-
-    .card-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      height: 100%;
-    }
-
-    .card-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .emoji {
-      flex: 0 0 auto;
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, #e7fbf8 0%, #d7f5f0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      box-shadow: inset 0 0 0 1px rgba(127, 216, 203, 0.18);
-    }
-
-    .card-title {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.35;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-      word-break: keep-all;
-    }
-
-    .arrow {
-      flex: 0 0 auto;
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      background: #f3fbfa;
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7aaea6;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .hint {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 12px;
-      line-height: 1.5;
-      color: #94a3b8;
-      font-weight: 600;
-    }
-
-    @media (max-width: 390px) {
-      .wrap {
-        padding: 20px 14px 24px;
-      }
-
-      .title {
-        font-size: 28px;
-      }
-
-      .subtitle {
-        font-size: 15px;
-      }
-
-      .card {
-        min-height: 102px;
-        padding: 18px 18px;
-      }
-
-      .card-title {
-        font-size: 18px;
-      }
-
-      .emoji {
-        width: 48px;
-        height: 48px;
-        font-size: 24px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <section class="hero">
-      <h1 class="title">내 첫 포스팅,<br>이대로만 쓰면 돼요.</h1>
-      <p class="subtitle">
-        길게 쓸 필요도 몇시간씩 시간을 쓸 필요도 없어요.<br>
-        아래 둘 중 하나를 골라 바로 따라 써보세요.
-      </p>
-    </section>
-
-    <section class="card-list">
-      <a href="#hotel" class="card">
-        <div class="card-inner">
-          <div class="card-left">
-            <div class="emoji">🏨</div>
-            <h2 class="card-title">최근 다녀온 숙소 후기 쓰기</h2>
-          </div>
-          <div class="arrow">›</div>
-        </div>
-      </a>
-
-      <a href="#shopping" class="card">
-        <div class="card-inner">
-          <div class="card-left">
-            <div class="emoji">🛒</div>
-            <h2 class="card-title">최근 구매한 물건 후기 쓰기</h2>
-          </div>
-          <div class="arrow">›</div>
-        </div>
-      </a>
-    </section>
-
-    <p class="hint">카드를 누르면 바로 예시를 볼 수 있어요</p>
-  </main>
-</body>
-</html>      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
       overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     details.card[open] {
-      border-color: #d8e4ff;
-      box-shadow: 0 14px 34px rgba(74, 144, 226, 0.10);
+      border-color: rgba(216,240,59,0.35);
     }
 
     summary {
       list-style: none;
       cursor: pointer;
-      padding: 24px 22px;
+      padding: 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+      gap: 10px;
     }
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    .summary-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .emoji {
-      font-size: 26px;
+    .summary-emoji {
+      font-size: 22px;
       line-height: 1;
-      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      margin-right: 10px;
     }
 
     .card-title {
-      font-size: 22px;
-      line-height: 1.35;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #111827;
-      word-break: keep-all;
-    }
-
-    .arrow {
-      flex-shrink: 0;
-      font-size: 22px;
-      color: #9aa4b2;
-      transition: transform 0.2s ease;
-    }
-
-    details[open] .arrow {
-      transform: rotate(180deg);
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      width: 100%;
+      font-size: 21px !important;
+      font-weight: 800 !important;
+      line-height: 1.35 !important;
     }
 
     .card-body {
-      padding: 0 22px 22px;
-      border-top: 1px solid #f0f3f8;
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .intro {
+      margin: 14px 0 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1.6 !important;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
     }
 
     .section {
-      margin-top: 18px;
+      margin-top: 12px;
     }
 
-    .section-label {
-      margin: 0 0 10px;
-      font-size: 14px;
+    .label {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 800;
-      color: #4f79d8;
-      letter-spacing: -0.01em;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 6px 9px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
     }
 
-    .desc-box {
-      background: #f8fbff;
-      border: 1px solid #e5efff;
-      border-radius: 16px;
-      padding: 14px 14px 12px;
-    }
-
-    .desc-box ul,
-    .desc-box ol {
+    ul, ol {
       margin: 0;
       padding-left: 18px;
     }
 
-    .desc-box li {
-      font-size: 14px;
-      line-height: 1.65;
-      color: #334155;
+    li {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1.6 !important;
+      color: var(--text);
       margin-bottom: 6px;
+      letter-spacing: -0.02em;
       word-break: keep-all;
     }
 
-    .desc-box li:last-child {
-      margin-bottom: 0;
+    .note {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(143,227,255,0.08);
+      border: 1px solid rgba(143,227,255,0.14);
     }
 
-    .tip {
-      margin-top: 12px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: #6b7280;
+    .note p {
+      margin: 0;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1.6 !important;
+      color: var(--muted);
+      letter-spacing: -0.02em;
+      word-break: keep-all;
     }
 
-    .button-wrap {
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: block;
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       width: 100%;
-      text-align: center;
-      text-decoration: none;
-      background: #4a90e2;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 700;
+      margin-top: 14px;
+      border: none;
+      border-radius: 16px;
       padding: 14px 16px;
-      border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(74, 144, 226, 0.20);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: var(--button);
+      color: var(--button-text);
+      text-decoration: none;
     }
 
-    .btn:hover {
-      background: #3d82d3;
+    .footer-tip {
+      padding: 0 2px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--soft);
+      letter-spacing: -0.02em;
+      text-align: center;
     }
 
-    @media (max-width: 390px) {
+    @media (max-height: 760px) {
       .wrap {
-        padding: 18px 14px 22px;
+        gap: 10px;
+        padding-top: calc(env(safe-area-inset-top) + 14px);
       }
 
-      .title {
-        font-size: 28px;
+      .hero h1 {
+        font-size: clamp(24px, 7.4vw, 38px);
       }
 
-      .subtitle {
-        font-size: 15px;
-      }
-
-      .card-title {
-        font-size: 20px;
+      .hero p {
+        font-size: 13px;
+        margin-top: 10px;
       }
 
       summary {
-        padding: 22px 18px;
+        padding: 14px;
       }
 
-      .card-body {
-        padding: 0 18px 18px;
+      .card-title {
+        font-size: 18px !important;
       }
     }
   </style>
@@ -372,114 +266,96 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <h1 class="title">내 첫 포스팅,<br>이대로만 쓰면 돼요.</h1>
-      <p class="subtitle">
-        길게 쓸 필요도 몇시간씩 시간을 쓸 필요도 없어요.<br>
-        아래 둘 중 하나를 골라 바로 따라 써보세요.
-      </p>
+      <p class="eyebrow">처음이라면 아래 둘 중 하나만 골라 시작해보세요</p>
+      <h1>내 첫 포스팅,<br>이대로만 쓰면 돼요</h1>
+      <p>아주 잘 쓸 필요도, 길게 쓸 필요도 없어요. 예시 하나 고르고 바로 따라 써보세요.</p>
     </section>
 
-    <section class="card-list">
+    <section class="stack">
       <details class="card">
         <summary>
-          <div class="summary-left">
-            <div class="emoji">🏨</div>
-            <div class="card-title">최근 다녀온 숙소 후기 쓰기</div>
-          </div>
-          <div class="arrow">⌄</div>
+          <span class="summary-emoji">🏨</span>
+          <span class="card-title">
+            최근 다녀온 숙소 후기 쓰기
+            <span style="margin-left:auto; font-size:18px; line-height:1; opacity:.7;">▾</span>
+          </span>
         </summary>
 
         <div class="card-body">
+          <div class="intro">여행 글은 이미 다녀온 경험만 있어도 시작하기 쉬워요. 최근 숙소 하나만 떠올려서 아래 구조대로 적어보세요.</div>
+
           <div class="section">
-            <p class="section-label">[제목 예시]</p>
-            <div class="desc-box">
-              <ol>
-                <li>오사카 난바 호텔 추천, 위치 좋아서 만족한 숙소 후기</li>
-                <li>제주 애월 감성숙소 2박 후기, 커플여행 숙소 추천</li>
-                <li>후쿠오카 3박 4일 숙소 후기, 가성비 호텔 찾는다면</li>
-                <li>부산 해운대 오션뷰 호텔 후기, 친구랑 가기 좋았던 숙소</li>
-                <li>도쿄 신주쿠 호텔 후기, 지하철 가까운 숙소 추천</li>
-              </ol>
-            </div>
+            <span class="label">제목 예시</span>
+            <ul>
+              <li>제주 애월 오션뷰 숙소 2박 후기, 위치와 가격까지 정리</li>
+              <li>오사카 난바 가성비 호텔 추천, 실제 숙박 후기</li>
+              <li>강릉 1박2일 숙소 후기, 재방문 의사 있는 이유</li>
+              <li>방콕 수영장 호텔 후기, 가족여행 숙소로 괜찮았을까?</li>
+              <li>부산 해운대 숙소 추천, 뷰·청결·위치 총정리</li>
+            </ul>
           </div>
 
           <div class="section">
-            <p class="section-label">[본문 내용]</p>
-            <div class="desc-box">
-              <ul>
-                <li>서론(선택 이유): 왜 이 숙소를 예약했는지</li>
-                <li>본론(상세 후기): 위치, 청결, 가격, 장점/아쉬운 점</li>
-                <li>결론(총평): 어떤 사람에게 추천하는지</li>
-              </ul>
-            </div>
+            <span class="label">본문 내용</span>
+            <ul>
+              <li><strong>서론</strong> : 왜 이 숙소를 예약했는지, 여행 목적과 함께 적기</li>
+              <li><strong>본론</strong> : 위치, 객실 상태, 청결, 장점·아쉬운 점, 가격 정리</li>
+              <li><strong>결론</strong> : 어떤 사람에게 추천하는지, 다시 갈 의사가 있는지 적기</li>
+            </ul>
           </div>
 
-          <div class="section">
-            <p class="section-label">[참고사항]</p>
-            <div class="desc-box">
-              <ul>
-                <li>처음 숙소 링크를 만든다면 아고다를 추천드려요.</li>
-                <li>링크는 1번보다 2~3번 넣는 것을 권장해요.</li>
-              </ul>
-            </div>
+          <div class="note">
+            <p><strong>참고사항</strong> : 처음 숙소 링크를 만든다면 <strong>아고다</strong>를 추천드려요. 가장 많은 크리에이터가 사용하는 프로그램입니다.</p>
+            <p><strong>링크 팁</strong> : 링크는 1번보다 2~3번 넣는 것을 권장해요.</p>
           </div>
 
-          <div class="button-wrap">
-            <a href="#" class="btn">예시 바로가기</a>
-          </div>
+          <a class="cta" href="#">예시 바로가기</a>
         </div>
       </details>
 
       <details class="card">
         <summary>
-          <div class="summary-left">
-            <div class="emoji">🛒</div>
-            <div class="card-title">최근 구매한 물건 후기 쓰기</div>
-          </div>
-          <div class="arrow">⌄</div>
+          <span class="summary-emoji">🛒</span>
+          <span class="card-title">
+            최근 구매한 물건 후기 쓰기
+            <span style="margin-left:auto; font-size:18px; line-height:1; opacity:.7;">▾</span>
+          </span>
         </summary>
 
         <div class="card-body">
+          <div class="intro">일상 글은 최근 구매한 물건 하나만 있으면 바로 시작할 수 있어요. 아래 제목 중 하나를 골라 써보세요.</div>
+
           <div class="section">
-            <p class="section-label">[제목 예시]</p>
-            <div class="desc-box">
-              <ol>
-                <li>원룸 제습기 건조기 LG 위닉스 VS 넥스코 미니제습기</li>
-                <li>여름맞이 스트레이트 체형 수영복 고르기 후보 추천</li>
-                <li>신생아부터 쓰는 브라운 체온계, 밤에 열 체크 편한 체온계 후기</li>
-                <li>자취생 필수템 가성비 좋은 롤팩 매트리스 데코라인 실루나</li>
-                <li>스타우브 솥밥 냄비 꼬꼬데 20 원형 주물냄비 3개월 사용 후기</li>
-              </ol>
-            </div>
+            <span class="label">제목 예시</span>
+            <ol>
+              <li>원룸 제습기 건조기 LG 위닉스 VS 넥스코 미니제습기</li>
+              <li>여름맞이 스트레이트 체형 수영복 고르기 후보 추천</li>
+              <li>신생아부터 쓰는 브라운 체온계, 밤에 열 체크 편한 체온계 후기</li>
+              <li>자취생 필수템 가성비 좋은 롤팩 매트리스 데코라인 실루나</li>
+              <li>스타우브 솥밥 냄비 꼬꼬데 20 원형 주물냄비 3개월 사용 후기</li>
+            </ol>
           </div>
 
           <div class="section">
-            <p class="section-label">[본문 내용]</p>
-            <div class="desc-box">
-              <ul>
-                <li>서론(선택 이유): 왜 이 브랜드, 이 상품을 구매하게 되었는지</li>
-                <li>본론(상세 후기): 실제 사용 후기, 장점/아쉬운 점, 가격</li>
-                <li>결론(총평/추천 유형): 누구에게 추천하고 싶은지</li>
-              </ul>
-            </div>
+            <span class="label">본문 내용</span>
+            <ul>
+              <li><strong>서론(선택이유)</strong> : 왜 이 브랜드, 이 상품을 구매하게 되었는지</li>
+              <li><strong>본론(상세 후기)</strong> : 실제로 써보았더니 어땠는지, 장점·아쉬운 점, 가격 등</li>
+              <li><strong>결론(총평, 추천유형)</strong> : 어떤 사람들에게 추천하고 싶은지 정리</li>
+            </ul>
           </div>
 
-          <div class="section">
-            <p class="section-label">[참고사항]</p>
-            <div class="desc-box">
-              <ul>
-                <li>처음 상품 링크를 만든다면 오늘의집, 쿠팡 같은 익숙한 프로그램부터 시작해보세요.</li>
-                <li>링크는 1번보다 2~3번 넣는 것을 권장해요.</li>
-              </ul>
-            </div>
+          <div class="note">
+            <p><strong>참고사항</strong> : 처음 상품 링크를 만든다면 <strong>오늘의집</strong>을 먼저 확인해보세요.</p>
+            <p><strong>링크 팁</strong> : 가격 언급 뒤 1번, 글 하단 1번처럼 2~3회 넣는 구성이 좋아요.</p>
           </div>
 
-          <div class="button-wrap">
-            <a href="#" class="btn">예시 바로가기</a>
-          </div>
+          <a class="cta" href="#">예시 바로가기</a>
         </div>
       </details>
     </section>
+
+    <div class="footer-tip">처음 글은 완벽하지 않아도 괜찮아요. 먼저 발행해보는 게 더 중요해요.</div>
   </main>
 </body>
 </html>
