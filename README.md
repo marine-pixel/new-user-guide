@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -245,9 +244,9 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">처음이라면 아래 둘 중 하나만 골라 시작해보세요</p>
+      <p class="eyebrow"></p>
       <h1>내 첫 포스팅,<br>이대로만 쓰면 돼요</h1>
-      <p>아주 잘 쓸 필요도, 길게 쓸 필요도 없어요. 예시 하나 고르고 바로 따라 써보세요.</p>
+      <p>아주 잘 쓸 필요도, 길게 쓸 필요도 없어요. <br>예시 하나 고르고 바로 따라 써보세요.</p>
     </section>
 
     <section class="stack">
@@ -261,7 +260,7 @@
         </summary>
 
         <div class="card-body">
-          <div class="intro">여행 글은 이미 다녀온 경험만 있어도 시작하기 쉬워요. 최근 숙소 하나만 떠올려서 아래 구조대로 적어보세요.</div>
+          <div class="intro">여행 글은 이미 다녀온 경험만 있어도 시작하기 쉬워요. <br>최근 다녀온 숙소 하나를 떠올려 보세요.</div>
 
           <div class="section">
             <span class="label">제목 예시</span>
@@ -279,13 +278,13 @@
             <ul>
               <li><strong>서론</strong> : 왜 이 숙소를 예약했는지, 여행 목적과 함께 적기</li>
               <li><strong>본론</strong> : 위치, 객실 상태, 청결, 장점·아쉬운 점, 가격 정리</li>
-              <li><strong>결론</strong> : 어떤 사람에게 추천하는지, 다시 갈 의사가 있는지 적기</li>
+              <li><strong>결론</strong> : 어떤 사람에게 추천하는지, 다시 갈 의사가 있는지</li>
             </ul>
           </div>
 
           <div class="note">
-            <p><strong>참고사항</strong> : 처음 숙소 링크를 만든다면 <strong>아고다</strong>를 추천드려요. 가장 많은 크리에이터가 사용하는 프로그램입니다.</p>
-            <p><strong>링크 팁</strong> : 링크는 1번보다 2~3번 넣는 것을 권장해요.</p>
+            <p><strong>⚠️참고사항</strong> : 처음 숙소 링크를 만든다면 <strong>아고다</strong>를 추천드려요. 가장 많은 크리에이터가 사용하는 프로그램입니다.</p>
+            <p><strong>⚠️링크 팁</strong> : 링크는 1번보다 2~3번 넣는 것이 구매 확률을 높여요</p>
           </div>
 
           <a class="cta" href="#">예시 바로가기</a>
@@ -302,10 +301,10 @@
         </summary>
 
         <div class="card-body">
-          <div class="intro">일상 글은 최근 구매한 물건 하나만 있으면 바로 시작할 수 있어요. 아래 제목 중 하나를 골라 써보세요.</div>
+          <div class="intro">일상 글은 최근 구매한 물건 하나만 있으면 바로 시작할 수 있어요. 아래 주제 중 하나를 골라 써보세요.</div>
 
           <div class="section">
-            <span class="label">제목 예시</span>
+            <span class="label">주제 예시</span>
             <ol>
               <li>원룸 제습기 건조기 LG 위닉스 VS 넥스코 미니제습기</li>
               <li>여름맞이 스트레이트 체형 수영복 고르기 후보 추천</li>
@@ -318,15 +317,15 @@
           <div class="section">
             <span class="label">본문 내용</span>
             <ul>
-              <li><strong>서론(선택이유)</strong> : 왜 이 브랜드, 이 상품을 구매하게 되었는지</li>
+              <li><strong>서론</strong> : 왜 이 브랜드, 이 상품을 구매하게 되었는지</li>
               <li><strong>본론(상세 후기)</strong> : 실제로 써보았더니 어땠는지, 장점·아쉬운 점, 가격 등</li>
-              <li><strong>결론(총평, 추천유형)</strong> : 어떤 사람들에게 추천하고 싶은지 정리</li>
+              <li><strong>결론</strong> : 어떤 사람들에게 추천하고 싶은지 정리</li>
             </ul>
           </div>
 
           <div class="note">
-            <p><strong>참고사항</strong> : 처음 상품 링크를 만든다면 <strong>오늘의집</strong>을 먼저 확인해보세요.</p>
-            <p><strong>링크 팁</strong> : 가격 언급 뒤 1번, 글 하단 1번처럼 2~3회 넣는 구성이 좋아요.</p>
+            <p><strong>참고사항</strong> : ⚠️처음 상품 링크를 만든다면 <strong>'오늘의집'</strong>을 먼저 확인해보세요.</p>
+            <p><strong>링크 팁</strong> : ⚠️링크는 1번보다 2~3번 넣는 것이 구매 확률을 높여요</p>
           </div>
 
           <a class="cta" href="#">예시 바로가기</a>
