@@ -9,13 +9,25 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --bg: #eef9f8;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-sub: #6b7280;
+      --line: #dff3f0;
+      --accent: #b9ebe5;
+      --accent-deep: #7fd8cb;
+      --shadow: 0 10px 30px rgba(127, 216, 203, 0.12);
+      --radius: 24px;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: #f7f9fc;
+      background: var(--bg);
+      color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-        "Pretendard", "Noto Sans KR", sans-serif;
-      color: #111827;
+        "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
     }
 
     body {
@@ -26,43 +38,184 @@
       width: 100%;
       max-width: 430px;
       margin: 0 auto;
-      padding: 20px 16px 24px;
+      padding: 22px 18px 28px;
     }
 
     .hero {
       text-align: center;
-      padding: 12px 4px 18px;
+      margin-bottom: 18px;
     }
 
     .title {
       margin: 0;
       font-size: 31px;
-      line-height: 1.28;
+      line-height: 1.22;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #111827;
+      color: var(--text-main);
     }
 
     .subtitle {
-      margin: 14px 0 0;
+      margin: 14px auto 0;
+      max-width: 320px;
       font-size: 16px;
       line-height: 1.55;
-      font-weight: 500;
-      color: #5b6475;
+      font-weight: 600;
+      color: var(--text-sub);
       word-break: keep-all;
     }
 
     .card-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 6px;
+      gap: 12px;
     }
 
-    details.card {
-      background: #ffffff;
-      border: 1px solid #e6ebf2;
-      border-radius: 24px;
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 20px;
+      min-height: 110px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:active {
+      transform: scale(0.985);
+    }
+
+    .card-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      height: 100%;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .emoji {
+      flex: 0 0 auto;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #e7fbf8 0%, #d7f5f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: inset 0 0 0 1px rgba(127, 216, 203, 0.18);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      word-break: keep-all;
+    }
+
+    .arrow {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #f3fbfa;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7aaea6;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .hint {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    @media (max-width: 390px) {
+      .wrap {
+        padding: 20px 14px 24px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .card {
+        min-height: 102px;
+        padding: 18px 18px;
+      }
+
+      .card-title {
+        font-size: 18px;
+      }
+
+      .emoji {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1 class="title">내 첫 포스팅,<br>이대로만 쓰면 돼요.</h1>
+      <p class="subtitle">
+        길게 쓸 필요도 몇시간씩 시간을 쓸 필요도 없어요.<br>
+        아래 둘 중 하나를 골라 바로 따라 써보세요.
+      </p>
+    </section>
+
+    <section class="card-list">
+      <a href="#hotel" class="card">
+        <div class="card-inner">
+          <div class="card-left">
+            <div class="emoji">🏨</div>
+            <h2 class="card-title">최근 다녀온 숙소 후기 쓰기</h2>
+          </div>
+          <div class="arrow">›</div>
+        </div>
+      </a>
+
+      <a href="#shopping" class="card">
+        <div class="card-inner">
+          <div class="card-left">
+            <div class="emoji">🛒</div>
+            <h2 class="card-title">최근 구매한 물건 후기 쓰기</h2>
+          </div>
+          <div class="arrow">›</div>
+        </div>
+      </a>
+    </section>
+
+    <p class="hint">카드를 누르면 바로 예시를 볼 수 있어요</p>
+  </main>
+</body>
+</html>      border-radius: 24px;
       box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
       overflow: hidden;
     }
