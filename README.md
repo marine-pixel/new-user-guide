@@ -65,7 +65,7 @@
     .hero h1 {
       margin: 0;
       font-size: clamp(28px, 8vw, 44px);
-      line-height: 1.08;
+      line-height: 1.22;
       letter-spacing: -0.04em;
       font-weight: 800;
       word-break: keep-all;
