@@ -39,43 +39,34 @@
     }
 
     .wrap {
-  width: 100%;
-  max-width: 460px;
-  margin: 0 auto;
-  min-height: 100svh;
-  padding: calc(env(safe-area-inset-top) + 140px) 18px calc(env(safe-area-inset-bottom) + 18px);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      min-height: 100svh;
+      padding: calc(env(safe-area-inset-top) + 140px) 18px calc(env(safe-area-inset-bottom) + 18px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-   .hero {
-  text-align: center;
-}
+    .hero {
+      text-align: center;
+    }
 
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 18px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  text-align: center;
-}
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 12px;
-      line-height: 1.35;
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
       font-weight: 700;
-      color: rgba(244,241,235,0.62);
-      letter-spacing: -0.02em;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
       text-align: center;
     }
 
@@ -184,6 +175,28 @@
       margin-top: 12px;
     }
 
+    .step-list {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    .step-list li {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+
+    .step-list li strong {
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+
     .label {
       display: inline-block;
       font-size: 11px;
@@ -196,30 +209,61 @@
       letter-spacing: -0.02em;
     }
 
-    ul, ol {
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 14px;
+      border: none;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: #d8f03b;
+      color: #0c1624;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(216, 240, 59, 0.28);
+    }
+
+    .cta-block {
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+
+    .example-box {
+      margin-top: 10px;
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .example-title {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .example-list {
       margin: 0;
       padding-left: 18px;
     }
 
-  li {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--text);
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-  word-break: keep-all;
-}
+    .example-list li {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
 
-ol li {
-  margin-bottom: 10px;
-}
-
-ol li strong {
-  display: inline-block;
-  margin-bottom: 4px;
-  font-weight: 800;
-}
     .note {
       display: grid;
       gap: 8px;
@@ -240,45 +284,6 @@ ol li strong {
       word-break: keep-all;
     }
 
- .cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 14px;
-  border: none;
-  border-radius: 16px;
-  padding: 14px 16px;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  background: #d8f03b;
-  color: #0c1624;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(216, 240, 59, 0.28);
-}
-.section ol {
-  margin: 0;
-  padding-left: 24px;
-}
-
-.section ul {
-  margin: 6px 0 0;
-  padding-left: 18px;
-}
-
-.example-title {
-  margin: 8px 0 6px;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.4;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.example-list li {
-  margin-bottom: 4px;
-}
     .footer-tip {
       padding: 2px 4px 0;
       font-size: 12px;
@@ -292,60 +297,71 @@ ol li strong {
 <body>
   <main class="wrap">
     <section class="hero">
-<div class="hero-label">바로 따라 쓸 수 있는 첫 포스팅 가이드</div>
+      <div class="hero-label">바로 따라 쓸 수 있는 첫 포스팅 가이드</div>
       <h1>내 첫 포스팅,<br>이대로만 쓰면 돼요</h1>
       <p>첫 수익화 글, 어렵게 시작하지 마세요. <br> 아래 예시 중 하나를 골라 바로 써보세요.</p>
     </section>
 
-<section class="stack">
-  <details class="card">
-   <summary>
-  <span class="summary-emoji">🏨</span>
-  <span class="card-title">
-    최근 다녀온 숙소가 있나요?
-    <span class="chevron">▾</span>
-  </span>
-</summary>
+    <section class="stack">
+      <details class="card">
+        <summary>
+          <span class="summary-emoji">🏨</span>
+          <span class="card-title">
+            최근 다녀온 숙소가 있나요?
+            <span class="chevron">▾</span>
+          </span>
+        </summary>
 
-<div class="card-body">
-  <div class="intro">
-    최근 다녀온 국내외 숙소를 떠올려 보세요.
-  </div>
+        <div class="card-body">
+          <div class="intro">
+            최근 다녀온 국내외 숙소를 떠올려 보세요.
+          </div>
 
-  <div class="section">
-    <ol>
-      <li>
-        <strong>STEP 1. 숙소 예시글 읽어보기</strong><br>
-        혼자 쓰기가 막막하다면 예시글부터 보고 감을 잡아보세요.
-        제목을 어떻게 정하는지, 어떤 순서로 쓰는지, 링크를 어디에 넣는지까지 한 번에 볼 수 있어요.
-      </li>
-    </ol>
+          <div class="section">
+            <ul class="step-list">
+              <li>
+                <strong>STEP 1. 숙소 예시글 읽어보기</strong><br>
+                혼자 쓰기가 막막하다면 예시글부터 보고 감을 잡아보세요.
+                제목을 어떻게 정하는지, 어떤 순서로 쓰는지, 링크를 어디에 넣는지까지 한 번에 볼 수 있어요.
+              </li>
+            </ul>
 
-    <a class="cta" href="https://your-link.com" target="_blank" rel="noopener noreferrer">예시 바로가기</a>
-  </div>
+            <div class="cta-block">
+              <a class="cta" href="https://your-link.com" target="_blank" rel="noopener noreferrer">예시 바로가기</a>
+            </div>
+          </div>
 
-  <div class="section">
-    <ol start="2">
-      <li>
-        <strong>STEP 2. 제목 정하고 예시 따라 써보기</strong><br>
-        아래 제목 예시처럼 '숙소 특징 + 이름'을 넣어 제목을 정해보세요. 본문은 예시글처럼만 쓰면 충분합니다. 
-      </li>
-    </ol>
+          <div class="section">
+            <ul class="step-list">
+              <li>
+                <strong>STEP 2. 제목 정하고 예시 따라 써보기</strong><br>
+                아래 제목 예시처럼 '숙소 특징 + 이름'을 넣어 제목을 정해보세요.
+                본문은 예시글처럼만 쓰면 충분합니다.
+              </li>
+            </ul>
 
- <div class="example-title">[제목 예시]</div>
+            <div class="example-box">
+              <div class="example-title">[제목 예시]</div>
+              <ul class="example-list">
+                <li>제주 애월 오션뷰 숙소 2박 후기 000 호텔</li>
+                <li>오사카 난바 가성비 호텔 추천 1박 8만원대</li>
+                <li>강릉 오션뷰 숙소, 가족여행으로 추천하는 이유</li>
+                <li>방콕 5성급 ***호텔 가든코너룸 후기 수영장 조식 추천</li>
+              </ul>
+            </div>
+          </div>
 
-<ul class="example-list">
+          <div class="section">
+            <ul class="step-list">
+              <li>
+                <strong>STEP 3. 제휴링크 넣고 발행하기</strong><br>
+                처음 숙소 링크를 만든다면 '아고다'를 추천드려요.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
 
-  <li>제주 애월 오션뷰 숙소 2박 후기 000 호텔</li>
-
-  <li>오사카 난바 가성비 호텔 추천 1박 8만원대</li>
-
-  <li>강릉 오션뷰 숙소, 가족여행으로 추천하는 이유</li>
-
-  <li>방콕 5성급 ***호텔 가든코너룸 후기 수영장 조식 추천</li>
-
-</ul>
-  </div>
       <details class="card">
         <summary>
           <span class="summary-emoji">🛒</span>
@@ -356,34 +372,53 @@ ol li strong {
         </summary>
 
         <div class="card-body">
-          <div class="intro">일상 글은 최근 구매한 물건 하나만 있으면 바로 시작할 수 있어요. 아래 제목 중 하나를 골라 써보세요.</div>
-
-          <div class="section">
-            <span class="label">제목 예시</span>
-            <ol>
-              <li>원룸 제습기 건조기 LG 위닉스 VS 넥스코 미니제습기</li>
-              <li>여름맞이 스트레이트 체형 수영복 고르기 후보 추천</li>
-              <li>신생아부터 쓰는 브라운 체온계, 밤에 열 체크 편한 체온계 후기</li>
-              <li>자취생 필수템 가성비 좋은 롤팩 매트리스 데코라인 실루나</li>
-              <li>스타우브 솥밥 냄비 꼬꼬데 20 원형 주물냄비 3개월 사용 후기</li>
-            </ol>
+          <div class="intro">
+            일상 글은 최근 구매한 물건 하나만 있으면 바로 시작할 수 있어요.
           </div>
 
           <div class="section">
-            <span class="label">본문 내용</span>
-            <ul>
-              <li><strong>서론</strong> : 왜 이 브랜드, 이 상품을 구매하게 되었는지</li>
-              <li><strong>본론(상세 후기)</strong> : 실제로 써보았더니 어땠는지, 장점·아쉬운 점, 가격 등</li>
-              <li><strong>결론</strong> : 어떤 사람들에게 추천하고 싶은지 정리</li>
+            <ul class="step-list">
+              <li>
+                <strong>STEP 1. 상품 예시글 읽어보기</strong><br>
+                어떤 흐름으로 쓰면 되는지 막막하다면 예시글부터 보세요.
+                제목, 본문 구성, 링크 넣는 위치까지 한 번에 감을 잡을 수 있어요.
+              </li>
+            </ul>
+
+            <div class="cta-block">
+              <a class="cta" href="#" target="_blank" rel="noopener noreferrer">예시 바로가기</a>
+            </div>
+          </div>
+
+          <div class="section">
+            <ul class="step-list">
+              <li>
+                <strong>STEP 2. 제목 정하고 예시 따라 써보기</strong><br>
+                아래 제목 예시처럼 '상품 특징 + 제품명'을 넣어 제목을 정해보세요.
+                본문은 예시글처럼만 쓰면 충분해요.
+              </li>
+            </ul>
+
+            <div class="example-box">
+              <div class="example-title">[제목 예시]</div>
+              <ul class="example-list">
+                <li>원룸 제습기 건조기 LG 위닉스 VS 넥스코 미니제습기</li>
+                <li>여름맞이 스트레이트 체형 수영복 고르기 후보 추천</li>
+                <li>신생아부터 쓰는 브라운 체온계, 밤에 열 체크 편한 체온계 후기</li>
+                <li>자취생 필수템 가성비 좋은 롤팩 매트리스 데코라인 실루나</li>
+                <li>스타우브 솥밥 냄비 꼬꼬데 20 원형 주물냄비 3개월 사용 후기</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section">
+            <ul class="step-list">
+              <li>
+                <strong>STEP 3. 제휴링크 넣고 발행하기</strong><br>
+                처음 상품 링크를 만든다면 '오늘의집'부터 확인해보세요.
+              </li>
             </ul>
           </div>
-
-          <div class="note">
-            <p><strong>참고사항</strong> : 처음 상품 링크를 만든다면 <strong>오늘의집</strong>을 먼저 확인해보세요.</p>
-            <p><strong>링크 팁</strong> : 가격 언급 뒤 1번, 글 하단 1번처럼 2~3회 넣는 구성이 좋아요.</p>
-          </div>
-
-          <a class="cta" href="#">예시 바로가기</a>
         </div>
       </details>
     </section>
